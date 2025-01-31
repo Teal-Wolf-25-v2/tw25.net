@@ -1,84 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            body {
-                background-image: url("images/website_bg.png");
-                font-family: 'Comic Sans', 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
-                background-repeat: no-repeat;
-                background-size: 100%;
-            }
-            p {
-                color: #ffffff;
-                font-size: larger;
-            }
-            h1 {
-                color: #ffffff;
-                font-size: 70px;
-            }
-            footer {
-                color: #ffffff;
-                text-align: center;
-                margin-top: 11%;
-                font-size: small;
-            }
-            ul.menu {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                margin-left: 95%;
-                margin-top: -3.5%;
-                display: flex;
-                text-align: right;
-            }
-            ul.menu li {
-                margin-right: 10px;
-                color: #ffffff;
-            }
-            a.menu-link {
-                color: #ffffff;
-                text-decoration: none;
-            }
-            img.logo {
-                margin-top: -1%;
-            }
-        </style>
         <link rel="icon" href="images/logo.png">
+        <link rel="stylesheet" href="main.css">
         <title>About Me</title>
         <meta name=”viewport” content="width=device-width, initial-scale=1">
         <meta name="author" content="Teal Wolf 25">
         <meta name="application-name" content="About Me">
         <meta name="description" content="The website for Teal Wolf 25 where you can find his content.">
     </head>
+    <header>
+        <a href="index.html" class="logo-link">
+            <img src="images/logo.png" height="50px" width="50px" style="float: left;padding-right: 20px;" class="logo">
+            <h3 style="color: teal;">Teal Wolf 25</h3>
+        </a>
+        <li class="menu"><a href="https://shop.tw25.net" class="menu-link">Shop</a></li>
+    </header>
+    <hr width="100%" size="1" color="teal">
     <body>
-        <div>     
-        <h3 style="color: teal;"><a href="index.html"><img src="images/logo.png" height="3%" width="3%" style="float: left;padding-right: 20px;" class="logo"></a>Teal Wolf 25</h3>
+        <div class="outer-container">
+            <div class="content-container">
+                <div class="image-section">
+                    <img src="images/tw25_rounded.png" class="home-image" alt="Placeholder Image">
+                </div>
+                <div class="text-section">
+                    <h1>Teal Wolf 25</h1>
+                    <p>
+                        <b>Hello, I'm Teal Wolf 25 but you can call me Teal. I go by the<br>
+
+                        pronouns he/him. I like playing video games like Minecraft,<br>
+
+                        Terraria, Castle Crashers, Minecraft Dungeons, Portal 2 and<br>
+
+                        more. I find rollerblading and laser tag fun. My favorite<br>
+
+                        domestic animals are dogs but my favorite animals are wolves.<br>
+
+                        I like putting cheese on my food but hate rice. I find concerts<br>
+
+                        and sometimes arcades to be too loud for me. I find parks<br>
+
+                        kind of boring.<br><br>
+
+                        I hope you find what you're looking for on my site.</b>
+                    </p>
+                </div>
+            </div>
         </div>
-        <ul class="menu">
-            <li><a href="https://shop.tw25.net" class="menu-link">Shop</a></li>
-        </ul>
-        <hr width="100%" size="1" color="teal">
-        <img style="padding-top: 3%;padding-left: 18%;float: left;" src="images/tw25_rounded.png" height="21%" width="21%">
-        <h1 style="padding-left: 47%;padding-top: 1%;font-family: 'Orbitron','Tofu','Comic Sans','Open Sans',sans-serif";">Teal Wolf 25</h1>
-        <p style="padding-left: 42%;">
-            <b>Hello, I'm Teal Wolf 25 but you can call me Teal. I go by the<br>
-
-            pronouns he/him. I like playing video games like Minecraft,<br>
-            
-            Terraria, Castle Crashers, Minecraft Dungeons, Portal 2 and<br>
-            
-            more. I find rollerblading and laser tag fun. My favorite<br>
-            
-            domestic animals are dogs but my favorite animals are wolves.<br>
-            
-            I like putting cheese on my food but hate rice. I find concerts<br>
-            
-            and sometimes arcades to be too loud for me. I find parks<br>
-            
-            kind of boring.<br><br>
-
-            I hope you find what you're looking for on my site.</b>
-        </p>
-        <footer>Website is functional in portrait but doesn't look pretty</footer>
     </body>
+    <footer>Website is functional in portrait but doesn't look pretty</footer>
 </html>
