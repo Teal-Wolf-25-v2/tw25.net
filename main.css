@@ -6,6 +6,8 @@ html, body {
     background-position: center;
     background-attachment: fixed;
     margin: 0;
+    /* Ugly fix for vertical scrollbar on Chromium Based Browsers */
+    overflow-x: hidden;
 }
 p {
     color: #ffffff;
