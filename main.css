@@ -11,6 +11,7 @@ p {
 h1 {
     color: #ffffff;
     font-size: 70px;
+    font-family: 'Orbitron','Tofu','Comic Sans','Open Sans',sans-serif;
 }
 footer {
     color: #ffffff;
@@ -80,4 +81,28 @@ header {
     text-decoration: none;
     color: black;
     font-size: 16px;
+}
+
+.outer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-section {
+    padding-left: 40px;
+}
+
+.home-image {
+    object-fit: contain;
+    height: 350px;
+    width: 350px;
 }
