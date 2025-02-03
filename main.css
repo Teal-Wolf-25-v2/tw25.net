@@ -105,6 +105,9 @@ header {
 
 .text-section {
     padding-left: 40px;
+    /* Ugly fix for vertical scrollbar on Chromium Based Browsers */
+    /* Requires additional padding to bridge hidden overflow in html/body */
+    padding-right: 50px;
 }
 
 .home-image {
