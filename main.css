@@ -112,3 +112,22 @@ header {
     height: 350px;
     width: 350px;
 }
+
+@media (max-width: 768px) {
+    .outer-container {
+        display: block;
+    }
+    .content-container {
+        flex-direction: column;
+    }
+
+    .text-section {
+        padding-left: 0;
+        padding-top: 20px;
+    }
+
+    .home-image {
+        height: 250px;
+        width: 250px;
+    }
+}
