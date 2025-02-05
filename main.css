@@ -23,7 +23,7 @@ h2 {
     color: #ffffff;
 }
 
-ul li{
+ul li {
     color: #ffffff;
 }
 
@@ -36,14 +36,13 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: 0%;
     display: flex;
     text-align: right;
     list-style: none;
 }
 
 ul.menu li {
-    margin-right: 10px;
+    margin-right: 40px;
     color: #ffffff;
     margin-left: 20px;
 }
@@ -52,6 +51,11 @@ a.menu-link {
     color: #ffffff;
     text-decoration: none;
 
+}
+
+.menu-button {
+    background-color: #00000000;
+    border: none;
 }
 
 img.logo {
@@ -90,13 +94,57 @@ header {
     float: right;
 }
 
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    color: #ffffff;
+    padding: 16px;
+    border: none;
+    background-color: #00000000;
+}
+
+.creations {
+    display: none;
+    position: absolute;
+    background-color: #007f7f7f;
+    z-index: 1;
+}
+
+.menu-link-drop {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.menu-link-drop:hover {
+    color: aqua;
+}
+
+.menu-dropdown:hover .creations {
+    display: block;
+}
+
 @media (orientation: portrait) {
     .site-title {
         font-size: 50px;
     }
+
     .menu-link {
         font-size: 50px;
     }
+
+    .dropbtn {
+        font-size: 50px;
+    }
+
+    .creations {
+        font-size: 75px;
+    }
+
     .logo {
         width: 150px;
         height: 150px;
@@ -107,9 +155,19 @@ header {
     .menu-link {
         font-size: 16px;
     }
-    .menu {
-        margin-left: 80%;
+
+    .dropbtn {
+        font-size: 16px;
     }
+
+    .menu {
+        margin-left: 70%;
+    }
+
+    .creations {
+        font-size: 16px;
+    }
+
     .logo {
         width: 50px;
         height: 50px;
