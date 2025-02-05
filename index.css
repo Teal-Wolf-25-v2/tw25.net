@@ -66,8 +66,10 @@ footer {
     }
     h1 {
         font-size: 140px;
+        text-align: center;
     }
     p {
         font-size: 210%;
+        text-align: center;
     }
 }
