@@ -19,6 +19,14 @@ h1 {
     color: #ffffff;
 }
 
+h2 {
+    color: #ffffff;
+}
+
+ul li{
+    color: #ffffff;
+}
+
 footer {
     color: #ffffff;
     text-align: center;
@@ -28,7 +36,7 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: -3.5%;
+    margin-top: 0%;
     display: flex;
     text-align: right;
     list-style: none;
@@ -100,7 +108,7 @@ header {
         font-size: 16px;
     }
     .menu {
-        margin-left: 95%;
+        margin-left: 80%;
     }
     .logo {
         width: 50px;
