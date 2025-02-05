@@ -42,9 +42,9 @@ footer {
 }
 
 ul.menu li {
-    margin-right: 40px;
     color: #ffffff;
     margin-left: 20px;
+    margin-right: 40px;
 }
 
 a.menu-link {
@@ -100,7 +100,6 @@ header {
 }
 
 .dropbtn {
-    color: #ffffff;
     padding: 16px;
     border: none;
     background-color: #00000000;
@@ -109,23 +108,12 @@ header {
 .creations {
     display: none;
     position: absolute;
-    background-color: #007f7f7f;
     z-index: 1;
 }
 
 .menu-link-drop {
-    color: #ffffff;
     padding: 12px 16px;
     text-decoration: none;
-    display: block;
-}
-
-.menu-link-drop:hover {
-    color: aqua;
-}
-
-.menu-dropdown:hover .creations {
-    display: block;
 }
 
 @media (orientation: portrait) {
@@ -139,15 +127,22 @@ header {
 
     .dropbtn {
         font-size: 50px;
+        color: #ffffff00;
+        display: none;
     }
 
     .creations {
-        font-size: 75px;
+        background-color: #00000000;
     }
 
     .logo {
         width: 150px;
         height: 150px;
+    }
+
+    .menu-link-drop {
+        color: #ffffff00;
+        display: none;
     }
 }
 
@@ -158,18 +153,29 @@ header {
 
     .dropbtn {
         font-size: 16px;
-    }
-
-    .menu {
-        margin-left: 70%;
+        color: #ffffff;
     }
 
     .creations {
         font-size: 16px;
+        background-color: #007f7f7f;
     }
 
     .logo {
         width: 50px;
         height: 50px;
+    }
+
+    .menu-link-drop {
+        color: #ffffff;
+        display: block;
+    }
+
+    .menu-link-drop:hover {
+        color: aqua;
+    }
+
+    .menu-dropdown:hover .creations {
+        display: block;
     }
 }
