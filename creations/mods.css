@@ -1,0 +1,59 @@
+.modrinth {
+    background-image: url(https://cdn.modrinth.com/landing-new/landing.webp);
+    width: 100%t;
+    background-size: cover;
+    display: grid;
+    place-items: center;
+}
+
+.mr-logo {
+    height: auto;
+}
+
+.mod-logo {
+    height: auto;
+}
+
+footer.mr-notice {
+    color: #ffffff7f;
+}
+
+@media (orientation: landscape) {
+    .container {
+        display: flex;
+    }
+
+    .text {
+        font-size: larger;
+    }
+
+    .mr-logo {
+        width: 100px;
+    }
+
+    .mod-logo {
+        width: 100px;
+    }
+}
+
+@media (orientation: portrait) {
+    .container {
+        display: block;
+    }
+
+    .content {
+        flex-direction: column;
+    }
+
+    .text {
+        font-size: 210%;
+    }
+
+    .mr-logo {
+        width: 200px;
+    }
+
+    .mod-logo {
+        width: 300px;
+    }
+}
