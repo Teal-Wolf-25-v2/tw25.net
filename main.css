@@ -1,4 +1,5 @@
-html,body {
+html,
+body {
     background-image: url("images/website_bg.png");
     font-family: 'Comic Sans', 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
     background-repeat: no-repeat;
@@ -23,24 +24,26 @@ footer {
     text-align: center;
 }
 
-ul.menu {
+.menu {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-left: 95%;
     margin-top: -3.5%;
     display: flex;
     text-align: right;
+    list-style: none;
 }
 
 ul.menu li {
     margin-right: 10px;
     color: #ffffff;
+    margin-left: 20px;
 }
 
 a.menu-link {
     color: #ffffff;
     text-decoration: none;
+
 }
 
 img.logo {
@@ -71,17 +74,36 @@ header {
 
 .logo {
     margin-right: 0px;
+    padding-right: 20px;
 }
 
-.home-image {
-    object-fit: contain;
-    height: 350px;
-    width: 350px;
+.site-title {
+    color: teal;
+    float: right;
 }
 
-@media (max-width: 768px) {
-    .home-image {
-        height: 250px;
-        width: 250px;
+@media (orientation: portrait) {
+    .site-title {
+        font-size: 50px;
+    }
+    .menu-link {
+        font-size: 50px;
+    }
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+@media (orientation: landscape) {
+    .menu-link {
+        font-size: 16px;
+    }
+    .menu {
+        margin-left: 95%;
+    }
+    .logo {
+        width: 50px;
+        height: 50px;
     }
 }
