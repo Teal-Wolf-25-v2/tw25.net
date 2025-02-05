@@ -1,0 +1,51 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+a.old {
+    text-decoration: none;
+    color: aqua;
+}
+
+.allimages img {
+    height: auto;
+}
+
+@media (orientation: landscape) {
+    h1 {
+        font-size: 52px;
+    }
+
+    h2 {
+        font-size: 35px;
+    }
+
+    .allimages img {
+        width:10%;
+    }
+}
+
+@media (orientation: portrait) {
+    h1 {
+        font-size: 105px;
+    }
+
+    h2 {
+        font-size: 70px;
+    }
+
+    .allimages img {
+        width: max-content;
+    }
+}

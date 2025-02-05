@@ -11,11 +11,24 @@ body {
     overflow-x: hidden;
 }
 
+@font-face {
+    font-family: "Orbitron";
+    src: url("fonts/orbitron.woff2") format('woff2');
+  }
+
 p {
     color: #ffffff;
 }
 
 h1 {
+    color: #ffffff;
+}
+
+h2 {
+    color: #ffffff;
+}
+
+ul li {
     color: #ffffff;
 }
 
@@ -28,22 +41,26 @@ footer {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    margin-top: -3.5%;
     display: flex;
     text-align: right;
     list-style: none;
 }
 
 ul.menu li {
-    margin-right: 10px;
     color: #ffffff;
     margin-left: 20px;
+    margin-right: 40px;
 }
 
 a.menu-link {
     color: #ffffff;
     text-decoration: none;
 
+}
+
+.menu-button {
+    background-color: #00000000;
+    border: none;
 }
 
 img.logo {
@@ -82,16 +99,55 @@ header {
     float: right;
 }
 
+.menu-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    padding: 16px;
+    border: none;
+    background-color: #00000000;
+}
+
+.creations {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+
+.menu-link-drop {
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
 @media (orientation: portrait) {
     .site-title {
         font-size: 50px;
     }
+
     .menu-link {
         font-size: 50px;
     }
+
+    .dropbtn {
+        font-size: 50px;
+        color: #ffffff00;
+        display: none;
+    }
+
+    .creations {
+        background-color: #00000000;
+    }
+
     .logo {
         width: 150px;
         height: 150px;
+    }
+
+    .menu-link-drop {
+        color: #ffffff00;
+        display: none;
     }
 }
 
@@ -99,11 +155,32 @@ header {
     .menu-link {
         font-size: 16px;
     }
-    .menu {
-        margin-left: 95%;
+
+    .dropbtn {
+        font-size: 16px;
+        color: #ffffff;
     }
+
+    .creations {
+        font-size: 16px;
+        background-color: #007f7f7f;
+    }
+
     .logo {
         width: 50px;
         height: 50px;
+    }
+
+    .menu-link-drop {
+        color: #ffffff;
+        display: block;
+    }
+
+    .menu-link-drop:hover {
+        color: aqua;
+    }
+
+    .menu-dropdown:hover .creations {
+        display: block;
     }
 }
