@@ -1,15 +1,227 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="images/logo.png" rel="icon">
-        <link rel="stylesheet" href="main.css">
-        <link rel="stylesheet" href="404.css">
-        <title>Page Not Found</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>404</h1>
-            <p>The content you're looking for doesn't exist.</p>
-        </div>
-    </body>
+
+<head>
+    <link href="images/logo.png" rel="icon">
+    <style>
+        html,
+        body {
+            background-image: url("images/website_bg.png");
+            font-family: 'Comic Sans', 'Open Sans', 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            /* Ugly fix for vertical scrollbar on Chromium Based Browsers */
+            overflow-x: hidden;
+        }
+
+        @font-face {
+            font-family: "Orbitron";
+            src: url("fonts/orbitron.woff2") format('woff2');
+        }
+
+        p {
+            color: #ffffff;
+        }
+
+        h1 {
+            color: #ffffff;
+        }
+
+        h2 {
+            color: #ffffff;
+        }
+
+        ul li {
+            color: #ffffff;
+        }
+
+        footer {
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            text-align: right;
+            list-style: none;
+        }
+
+        ul.menu li {
+            color: #ffffff;
+            margin-left: 20px;
+            margin-right: 40px;
+        }
+
+        a.menu-link {
+            color: #ffffff;
+            text-decoration: none;
+
+        }
+
+        .menu-button {
+            background-color: #00000000;
+            border: none;
+        }
+
+        img.logo {
+            margin-top: -1%;
+        }
+
+        .center {
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            width: 100hv;
+            z-index: 10;
+            margin: 0;
+        }
+
+        .logo-link {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            text-decoration: none;
+        }
+
+        .logo {
+            margin-right: 0px;
+            padding-right: 20px;
+        }
+
+        .site-title {
+            color: teal;
+            float: right;
+        }
+
+        .menu-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropbtn {
+            padding: 16px;
+            border: none;
+            background-color: #00000000;
+        }
+
+        .creations {
+            display: none;
+            position: absolute;
+            z-index: 1;
+        }
+
+        .menu-link-drop {
+            padding: 12px 16px;
+            text-decoration: none;
+        }
+
+        @media (orientation: portrait) {
+            .site-title {
+                font-size: 50px;
+            }
+
+            .menu-link {
+                font-size: 50px;
+            }
+
+            .dropbtn {
+                font-size: 50px;
+                color: #ffffff00;
+                display: none;
+            }
+
+            .creations {
+                background-color: #00000000;
+            }
+
+            .logo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .menu-link-drop {
+                color: #ffffff00;
+                display: none;
+            }
+        }
+
+        @media (orientation: landscape) {
+            .menu-link {
+                font-size: 16px;
+            }
+
+            .dropbtn {
+                font-size: 16px;
+                color: #ffffff;
+            }
+
+            .creations {
+                font-size: 16px;
+                background-color: #007f7f7f;
+            }
+
+            .logo {
+                width: 50px;
+                height: 50px;
+            }
+
+            .menu-link-drop {
+                color: #ffffff;
+                display: block;
+            }
+
+            .menu-link-drop:hover {
+                color: aqua;
+            }
+
+            .menu-dropdown:hover .creations {
+                display: block;
+            }
+        }
+    </style>
+    <style>
+        html,
+        body {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: teal;
+            font-size: 600%;
+            padding-top: 10%;
+        }
+
+        p {
+            font-size: xx-large;
+        }
+    </style>
+    <title>Page Not Found</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>The content you're looking for doesn't exist.</p>
+    </div>
+</body>
+
 </html>
