@@ -29,6 +29,11 @@ footer {
     width: auto;
 }
 
+.text-social {
+    flex:auto;
+    flex-direction: column;
+}
+
 @media (orientation: landscape) {
     .outer-container {
         display: flex;
