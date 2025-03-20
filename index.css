@@ -24,6 +24,10 @@ footer {
     object-fit: contain;
 
 }
+.social img {
+    height: 50px;
+    width: auto;
+}
 
 @media (orientation: landscape) {
     .outer-container {
