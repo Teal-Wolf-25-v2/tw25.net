@@ -10,6 +10,10 @@
     height: auto;
 }
 
+.cf-logo {
+    height: auto;
+}
+
 .mod-logo {
     height: auto;
 }
@@ -31,6 +35,10 @@ footer.mr-notice {
         width: 325px;
     }
 
+    .cf-logo {
+        width: 325px;
+    }
+
     .mod-logo {
         width: 100px;
     }
@@ -47,6 +55,10 @@ footer.mr-notice {
 
     .text {
         font-size: 210%;
+    }
+
+    .mr-logo {
+        width: 200px;
     }
 
     .mr-logo {
