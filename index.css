@@ -32,9 +32,6 @@ footer {
     flex:auto;
     flex-direction: column;
 }
-a[rel="me"] {
-    display: none;
-}
 
 @media (orientation: landscape) {
     .outer-container {
