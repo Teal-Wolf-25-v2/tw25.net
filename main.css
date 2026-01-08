@@ -1,3 +1,8 @@
+:root {
+  /* this has to be set to switch between light or dark */
+  color-scheme: light dark;
+}
+
 html,
 body {
     background-image: url("images/website_bg.png");
@@ -17,23 +22,23 @@ body {
   }
 
 p {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
 }
 
 h1 {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
 }
 
 h2 {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
 }
 
 ul li {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
 }
 
 footer {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
     text-align: center;
 }
 
@@ -47,13 +52,13 @@ footer {
 }
 
 ul.menu li {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
     margin-left: 20px;
     margin-right: 40px;
 }
 
 a.menu-link {
-    color: #ffffff;
+    color: light-dark(#000000, #ffffff);
     text-decoration: none;
 
 }
@@ -158,12 +163,12 @@ header {
 
     .dropbtn {
         font-size: 16px;
-        color: #ffffff;
+        color: light-dark(#000000, #ffffff);
     }
 
     .creations {
         font-size: 16px;
-        background-color: #007f7f7f;
+        background-color: light-dark(#00ffff7f, #007f7f7f);
     }
 
     .logo {
@@ -172,15 +177,22 @@ header {
     }
 
     .menu-link-drop {
-        color: #ffffff;
+        color: light-dark(#000000, #ffffff);
         display: block;
     }
 
     .menu-link-drop:hover {
-        color: aqua;
+        color: light-dark(teal, aqua);
     }
 
     .menu-dropdown:hover .creations {
         display: block;
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    html,
+    body {
+        background-image: url('images/website_bg_light.png');
     }
 }

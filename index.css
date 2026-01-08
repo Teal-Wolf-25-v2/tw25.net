@@ -28,6 +28,7 @@ footer {
     width: auto;
     height: 100%;
     text-decoration: none;
+    fill: light-dark(#000000,#ffffff)
 }
 
 .text-social {
