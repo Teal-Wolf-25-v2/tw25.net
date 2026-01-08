@@ -34,12 +34,12 @@ footer {
 }
 
     .gay {
+        background: #ff2a2a;
         animation: gayRainbow 5s linear infinite;
         filter: hue-rotate(0deg);
     }
 
-    /* Keyframes for hue rotation */
-    @keyframes hueRotate {
+    @keyframes gayRainbow {
         from {
             filter: hue-rotate(0deg);
         }
