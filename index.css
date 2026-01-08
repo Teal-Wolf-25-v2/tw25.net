@@ -25,7 +25,9 @@ footer {
 
 }
 .social-img {
-    width: 2rem;
+    width: auto;
+    height: 100%;
+    text-decoration: none;
 }
 
 .text-social {
@@ -33,20 +35,22 @@ footer {
     flex-direction: column;
 }
 
-    .gay {
-        color: #ff2a2a;
-        animation: gayRainbow 5s linear infinite;
-        filter: hue-rotate(0deg);
-    }
+.gay {
+    fill: hsl(0,100%,58%);
+    animation: gayRainbow 5s linear infinite;
+    filter: hue-rotate(0deg);
+}
 
-    @keyframes gayRainbow {
-        from {
-            filter: hue-rotate(0deg);
-        }
-        to {
-            filter: hue-rotate(360deg);
-        }
+@keyframes gayRainbow {
+    from {
+        filter: hue-rotate(0deg);
+        --gay-color:hsl(0,100%,58%);
     }
+    to {
+        filter: hue-rotate(360deg);
+        --gay-color:hsl(360,100%,58%);
+    }
+}
 
 @media (orientation: landscape) {
     .outer-container {
@@ -68,8 +72,8 @@ footer {
         font-size: larger;
     }
 
-    .social-img {
-        height: 50px;
+    .social {
+        height: 2rem;
     }
 }
 
@@ -100,11 +104,8 @@ footer {
         text-align: center;
     }
 
-    .social-img {
-        height: 200px;
-    }
-
     .social {
+        height: 8rem;
         padding-left: 18%;
     }
 }
