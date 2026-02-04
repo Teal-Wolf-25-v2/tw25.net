@@ -6,7 +6,7 @@ async function loadModrinthMods() {
     query: "",
     facets: JSON.stringify([
       ["project_type:mod"],
-      ["author:UzSv1jdz","author:8vWL8Q49"]
+      ["author:Teal_Wolf_25"]
     ]),
     limit: 40,
     index: "downloads"
