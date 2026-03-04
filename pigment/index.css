@@ -63,3 +63,8 @@ button:hover {
 #skin {
     margin-top: 20px;
 }
+
+#pigment_png {
+    text-decoration: none;
+    color: light-dark(#000000,#ffffff);
+}

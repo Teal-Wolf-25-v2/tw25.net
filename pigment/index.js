@@ -131,23 +131,9 @@ async function generatePigment() {
     document.getElementById("colors").innerHTML =
         `<div class="color-box" style="background:${c1}">${c1}</div>
          <div class="color-box" style="background:${c2}">${c2}</div>`;
+    document.getElementById("pigment_png").href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+c1+'-%23'+c2+'&define=png:lossless=true&f=png'
 
     showSkin(username);
-}
-
-// ================= PNG Export =================
-function exportPNG() {
-    const gradientDiv = document.getElementById("gradient");
-    const style = getComputedStyle(gradientDiv);
-    const bg = style.backgroundImage;
-
-    const colors = bg.match(/#[0-9A-F]{6}/gi);
-    if (!colors) return;
-
-    const link = document.createElement("a");
-    link.download = "pigment.webp";
-    link.href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+colors[0]+'-%23'+colors[1]+'&define=webp:lossless=true&f=webp';
-    link.click();
 }
 
 
