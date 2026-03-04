@@ -99,34 +99,6 @@ function copyLink() {
     alert("Link copied!");
 }
 
-// ================= PNG Export =================
-function exportPNG() {
-    const gradientDiv = document.getElementById("gradient");
-    const style = getComputedStyle(gradientDiv);
-    const bg = style.backgroundImage;
-
-    const canvas = document.createElement("canvas");
-    canvas.width = 1200;
-    canvas.height = 400;
-    const ctx = canvas.getContext("2d");
-
-    const grad = ctx.createLinearGradient(0, 0, canvas.width, 0);
-
-    const colors = bg.match(/#[0-9A-F]{6}/gi);
-    if (!colors) return;
-
-    grad.addColorStop(0, colors[0]);
-    grad.addColorStop(1, colors[1]);
-
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-    const link = document.createElement("a");
-    link.download = "pigment.png";
-    link.href = canvas.toDataURL();
-    link.click();
-}
-
 // ================= URL Handling =================
 function getPathUser() {
     const path = window.location.pathname;
@@ -162,6 +134,22 @@ async function generatePigment() {
 
     showSkin(username);
 }
+
+// ================= PNG Export =================
+function exportPNG() {
+    const gradientDiv = document.getElementById("gradient");
+    const style = getComputedStyle(gradientDiv);
+    const bg = style.backgroundImage;
+
+    const colors = bg.match(/#[0-9A-F]{6}/gi);
+    if (!colors) return;
+
+    const link = document.createElement("a");
+    link.download = "pigment.webp";
+    link.href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+colors[0]+'-%23'+colors[1]+'&define=webp:lossless=true&f=webp';
+    link.click();
+}
+
 
 if (sessionStorage.redirect) {
     const path = sessionStorage.redirect;
