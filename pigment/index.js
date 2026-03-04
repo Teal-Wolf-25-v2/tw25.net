@@ -91,7 +91,7 @@ async function getVipPigment(uuid) {
         );
 
         const text = await res.text();
-        const data = JSON5.parse("{\n${text}\n}");
+        const data = JSON5.parse(`{\n${text}\n}`);
 
         const normalized = uuid.replace(/-/g,"").toLowerCase();
 
