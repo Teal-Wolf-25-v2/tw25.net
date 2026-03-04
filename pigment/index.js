@@ -73,7 +73,7 @@ function getPigment(uuid) {
 // ================= Username → UUID =================
 async function usernameToUUID(username) {
     const res = await fetch(
-        `https://api.mojang.com/users/profiles/minecraft/${username}`
+        `https://api.cors.lol/?url=` + `https://api.mojang.com/users/profiles/minecraft/${username}`
     );
     if (!res.ok) return null;
     const data = await res.json();
