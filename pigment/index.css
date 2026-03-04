@@ -1,6 +1,7 @@
 html,
 body {
-    background-image: url("/images/pigment_bg.png");
+    background: #221b32;
+    background-image: none;
 }
 
 body {
