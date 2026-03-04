@@ -48,27 +48,73 @@ function decToHex(dec) {
     return "#" + dec.toString(16).padStart(6, "0").toUpperCase();
 }
 
-// ================= Pigment =================
-function getPigment(uuid) {
-    const big = uuidToBigInt(uuid);
-    const msb = big >> 64n;
-    const lsb = big & ((1n << 64n) - 1n);
-    const seed = msb ^ lsb;
-    const rand = new JavaRandom(seed);
+// ================= Contrast Helper =================
+function getContrastTextColor(hex) {
+    hex = hex.replace("#", "");
+    const r = parseInt(hex.substring(0,2),16);
+    const g = parseInt(hex.substring(2,4),16);
+    const b = parseInt(hex.substring(4,6),16);
 
-    const h1 = rand.nextFloat();
-    const s1 = rand.nextFloatRange(0.4, 0.8);
-    const v1 = rand.nextFloatRange(0.7, 1.0);
+    const luminance = (0.299*r + 0.587*g + 0.114*b) / 255;
 
-    const h2 = rand.nextFloat();
-    const s2 = rand.nextFloatRange(0.7, 1.0);
-    const v2 = rand.nextFloatRange(0.2, 0.7);
+    return luminance > 0.6 ? "#000000" : "#FFFFFF";
+}
+
+// ================= Default Pigment =================
+function getDefaultPigment(uuid){
+    const big=uuidToBigInt(uuid);
+    const msb=big>>64n;
+    const lsb=big&((1n<<64n)-1n);
+    const seed=msb^lsb;
+
+    const rand=new JavaRandom(seed);
+
+    const h1=rand.nextFloat();
+    const s1=rand.nextFloatRange(0.4,0.8);
+    const v1=rand.nextFloatRange(0.7,1.0);
+
+    const h2=rand.nextFloat();
+    const s2=rand.nextFloatRange(0.7,1.0);
+    const v2=rand.nextFloatRange(0.2,0.7);
 
     return [
-        decToHex(hsbToRgbInt(h1, s1, v1)),
-        decToHex(hsbToRgbInt(h2, s2, v2))
+        decToHex(hsbToRgbInt(h1,s1,v1)),
+        decToHex(hsbToRgbInt(h2,s2,v2))
     ];
 }
+
+// ================= Fetch VIP Pigment =================
+async function getVipPigment(uuid) {
+    try {
+        const res = await fetch(
+            "https://raw.githubusercontent.com/gamma-delta/contributors/main/paucal/contributors-v01.json5"
+        );
+
+        const text = await res.text();
+        const data = JSON5.parse(text);
+
+        const normalized = uuid.replace(/-/g,"").toLowerCase();
+
+        for (const key in data) {
+            if (key.replace(/-/g,"").toLowerCase() === normalized) {
+                const entry = data[key];
+
+                if (entry["hexcasting:colorizer"]) {
+                    // Convert decimal values like 0xe64539 to "#E64539"
+                    return entry["hexcasting:colorizer"].map(num => {
+                        return decToHex(Number(num));
+                    });
+                }
+            }
+        }
+
+    } catch (e) {
+        console.warn("VIP pigment fetch failed:", e);
+    }
+
+    return null;
+}
+
 
 // ================= Username → UUID =================
 async function usernameToUUID(username) {
@@ -108,31 +154,50 @@ function getPathUser() {
     return null;
 }
 
-async function generatePigment() {
-    let input = document.getElementById("userInput").value.trim();
-    if (!input) return;
-
-    history.pushState({}, "", "/pigment/" + encodeURIComponent(input));
-
-    let uuid = input;
-    let username = input;
-
-    if (!isUUID(input)) {
-        uuid = await usernameToUUID(input);
-        if (!uuid) { alert("Invalid username"); return; }
-    }
-
-    const [c1, c2] = getPigment(uuid);
-
+// ================= Gradient Renderer =================
+function renderGradient(colors) {
     const gradientDiv = document.getElementById("gradient");
+
+    const stops = colors.map((c,i)=>
+        `${c} ${(i/(colors.length-1))*100}%`
+    ).join(",");
+
     gradientDiv.style.background =
-        `linear-gradient(90deg, ${c1}, ${c2}, ${c1})`;
+        `linear-gradient(90deg, ${stops})`;
 
     document.getElementById("colors").innerHTML =
-        `<div class="color-box" style="background:${c1}">${c1}</div>
-         <div class="color-box" style="background:${c2}">${c2}</div>`;
-    document.getElementById("pigment_png").href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+c1.slice(1)+'-%23'+c2.slice(1)+'&define=png:lossless=true&f=png'
+        colors.map(c =>
+            `<div class="color-box"
+                style="background:${c};color:${getContrastTextColor(c)}">
+                ${c}
+             </div>`
+        ).join("");
+}
 
+
+
+// ================= Main =================
+async function generatePigment(){
+    let input=document.getElementById("userInput").value.trim();
+    if(!input) return;
+
+    history.pushState({}, "", "/pigment/"+encodeURIComponent(input));
+
+    let uuid=input;
+    let username=input;
+
+    if(!isUUID(input)){
+        uuid=await usernameToUUID(input);
+        if(!uuid){ alert("Invalid username"); return; }
+    }
+
+    let colors = await getVipPigment(uuid);
+
+    if(!colors){
+        colors = getDefaultPigment(uuid);
+    }
+
+    renderGradient(colors);
     showSkin(username);
 }
 
