@@ -73,7 +73,11 @@ function getPigment(uuid) {
 // ================= Username → UUID =================
 async function usernameToUUID(username) {
     const res = await fetch(
-        `https://proxy.corsfix.com/?` + `https://api.mojang.com/users/profiles/minecraft/${username}`
+        `https://proxy.corsfix.com/?` + `https://api.mojang.com/users/profiles/minecraft/${username}`, {
+        headers: {
+            "x-corsfix-cache": "60m",
+        },
+    }
     );
     if (!res.ok) return null;
     const data = await res.json();
