@@ -57,7 +57,7 @@ function getContrastTextColor(hex) {
 
     const luminance = (0.299*r + 0.587*g + 0.114*b) / 255;
 
-    return luminance > 0.6 ? "#000000" : "#FFFFFF";
+    return luminance > 0.6 ? "#000000" : "rgb(254,203,230)";
 }
 
 // ================= Default Pigment =================
@@ -91,7 +91,7 @@ async function getVipPigment(uuid) {
         );
 
         const text = await res.text();
-        const data = JSONH-TS.parse(`{\n${text}\n}`);
+        const data = JsonhReader.parse(`{\n${text}\n}`);
 
         const normalized = uuid.replace(/-/g,"").toLowerCase();
 
