@@ -48,11 +48,11 @@ button:hover {
 
 @keyframes shimmer {
     0% {
-        background-position: 0% 50%;
+        transform: translateX(0%);
     }
 
     100% {
-        background-position: 100% 50%;
+        transform: translateX(-50%);
     }
 }
 
