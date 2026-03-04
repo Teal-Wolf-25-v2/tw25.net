@@ -131,7 +131,7 @@ async function generatePigment() {
     document.getElementById("colors").innerHTML =
         `<div class="color-box" style="background:${c1}">${c1}</div>
          <div class="color-box" style="background:${c2}">${c2}</div>`;
-    document.getElementById("pigment_png").href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+c1+'-%23'+c2+'&define=png:lossless=true&f=png'
+    document.getElementById("pigment_png").href = 'https://pool.net.eu.org/magick?size=256x256&define=gradient:angle=112.5&=gradient:%23'+c1.slice(1)+'-%23'+c2.slice(1)+'&define=png:lossless=true&f=png'
 
     showSkin(username);
 }
