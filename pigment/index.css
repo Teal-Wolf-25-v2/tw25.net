@@ -37,20 +37,16 @@ button:hover {
 #gradient {
     width: 200%;
     height: 100%;
-    animation: shimmer 12s linear infinite;
+    animation: shimmer 8s linear infinite alternate;
 }
 
 @keyframes shimmer {
     0% {
-        transform: translateX(0%);
-    }
-
-    50% {
-        transform: translateX(-50%);
+        background-position: 0% 50%;
     }
 
     100% {
-        transform: translateX(0%);
+        background-position: 100% 50%;
     }
 }
 
