@@ -86,7 +86,7 @@ async function usernameToUUID(username) {
 // ================= Skin =================
 function showSkin(username) {
     document.getElementById("skin").innerHTML =
-        `<img src="https://mc-heads.net/body/${username}/150" alt="Minecraft Skin">`;
+        `<img src="https://vzge.me/full/832/${username}" alt="Minecraft Skin">`;
 }
 
 // ================= Share =================
