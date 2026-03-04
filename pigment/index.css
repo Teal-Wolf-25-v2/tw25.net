@@ -46,7 +46,7 @@ button:hover {
     }
 
     100% {
-        transform: translateX(-50%);
+        transform: translateX(-40%);
     }
 }
 
