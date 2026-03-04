@@ -150,7 +150,7 @@ async function generatePigment() {
 
     const gradientDiv = document.getElementById("gradient");
     gradientDiv.style.background =
-        `linear-gradient(90deg, ${c1}, ${c2}, ${c1}, ${c2})`;
+        `linear-gradient(90deg, ${c1}, ${c2}, ${c1}, ${c2}, ${c2}, ${c2})`;
 
     document.getElementById("colors").innerHTML =
         `<div class="color-box" style="background:${c1}">${c1}</div>
