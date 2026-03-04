@@ -86,12 +86,12 @@ function getDefaultPigment(uuid){
 // ================= Fetch VIP Pigment =================
 async function getVipPigment(uuid) {
     try {
-        const res = '{'+await fetch(
+        const res = await fetch(
             "https://raw.githubusercontent.com/gamma-delta/contributors/main/paucal/contributors-v01.json5"
-        )+'}';
+        );
 
         const text = await res.text();
-        const data = JSON5.parse(text);
+        const data = JSON5.parse("{\n${text}\n}");
 
         const normalized = uuid.replace(/-/g,"").toLowerCase();
 
