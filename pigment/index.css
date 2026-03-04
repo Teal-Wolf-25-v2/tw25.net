@@ -1,0 +1,60 @@
+body {
+    background:#0f0f0f;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    padding:40px;
+}
+
+input, button {
+    padding:10px;
+    font-size:16px;
+    margin:6px;
+    border-radius:8px;
+    border:none;
+}
+
+button {
+    cursor:pointer;
+    background:#1e1e1e;
+    color:white;
+}
+
+button:hover {
+    background:#333;
+}
+
+#gradient-wrapper {
+    width:600px;
+    height:200px;
+    margin:30px auto;
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+    border:2px solid white;
+}
+
+#gradient {
+    width:200%;
+    height:100%;
+    animation: shimmer 6s linear infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+}
+
+.color-box {
+    display:inline-block;
+    width:160px;
+    height:50px;
+    margin:10px;
+    line-height:50px;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+#skin {
+    margin-top:20px;
+}
