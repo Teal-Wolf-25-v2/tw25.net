@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link href="/images/logo.png" rel="icon">
-        <link rel="stylesheet" href="/main.css">
-        <link rel="stylesheet" href="/404.css">
-        <title>Page Not Found</title>
-    </head>
-    <body>
-        <div class="container">
-            <h1>404</h1>
-            <p>The content you're looking for doesn't exist.</p>
-        </div>
-    </body>
+
+<head>
+    <link href="/images/logo.png" rel="icon">
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/404.css">
+    <title>Page Not Found</title>
+    <script>
+        if (location.pathname.startsWith("/pigment/")) {
+            sessionStorage.redirect = location.pathname + location.search;
+            location.replace("/pigment/");
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <p>The content you're looking for doesn't exist.</p>
+    </div>
+</body>
+
 </html>
